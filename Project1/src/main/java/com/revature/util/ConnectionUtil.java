@@ -21,7 +21,7 @@ public class ConnectionUtil {
         } catch (ClassNotFoundException e) {
             System.out.println("Can not find the driver.");
         }
-        try (InputStream in = new FileInputStream("C:\\Users\\kirkl\\Documents\\JetBrains\\IntelliJ_IDEA\\Projects\\Project1.14\\src\\main\\resources\\dbconfig.properties")) {
+        try (InputStream in = ConnectionUtil.class.getClassLoader().getResourceAsStream("dbconfig.properties")) {
             props.load(in);
             return DriverManager.getConnection(props.getProperty("jdbc.url"), props.getProperty("jdbc.username"),
                     props.getProperty("jdbc.password"));
