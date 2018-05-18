@@ -11,8 +11,8 @@ function getRequests(){
     // Step 2: Define the onreadystatechange callback function
     xhr.onreadystatechange = function(){
         // Step 5: handle the response
-        console.log(xhr.responseText);
-        console.log(xhr.status);
+        //console.log(xhr.responseText);
+        //console.log(xhr.status);
         if(xhr.readyState === 4 && xhr.status === 200){
 
             // Delete the old table body
