@@ -21,8 +21,8 @@ function getRequests() {
     // Step 2: Define the onreadystatechange callback function
     xhr.onreadystatechange = function () {
         // Step 5: handle the response
-        console.log(xhr.responseText);
-        console.log(xhr.status);
+        //console.log(xhr.responseText);
+        //console.log(xhr.status);
         if (xhr.readyState === 4 && xhr.status === 200) {
 
             // Delete the old table body
@@ -32,7 +32,7 @@ function getRequests() {
             let requests = JSON.parse(xhr.responseText);
 
             let status1 = document.getElementById("statusSelect").value;
-            console.log(status);
+            //console.log(status);
 
             // document.getElementById("eid").value == request.requesterId &&
             for (let request of requests) {
@@ -134,8 +134,8 @@ function getIdRequests() {
     // Step 2: Define the onreadystatechange callback function
     xhr.onreadystatechange = function () {
         // Step 5: handle the response
-        console.log(xhr.responseText);
-        console.log(xhr.status);
+        //console.log(xhr.responseText);
+        //console.log(xhr.status);
         if (xhr.readyState === 4 && xhr.status === 200) {
 
             // Delete the old table body
@@ -248,8 +248,8 @@ function getEmployees() {
     // Step 2: Define the onreadystatechange callback function
     xhr.onreadystatechange = function () {
         // Step 5: handle the response
-        console.log(xhr.responseText);
-        console.log(xhr.status);
+        //console.log(xhr.responseText);
+        //console.log(xhr.status);
         if (xhr.readyState === 4 && xhr.status === 200) {
 
             // Delete the old table body
@@ -258,7 +258,7 @@ function getEmployees() {
 
             let requests = JSON.parse(xhr.responseText);
 
-            console.log(status);
+            //console.log(status);
 
             // document.getElementById("eid").value == request.requesterId &&
             for (let request of requests) {
@@ -301,66 +301,3 @@ function getEmployees() {
 // Step 4: Call the send() method
     xhr.send();
 }
-
-
-// function getEmployees() {
-//
-//     // Step 1: create the XMLHttpRequest Object
-//     let xhr = new XMLHttpRequest();
-//
-//     // Step 2: Define the onreadystatechange callback function
-//     xhr.onreadystatechange = function () {
-//         // Step 5: handle the response
-//         console.log(xhr.responseText);
-//         console.log(xhr.status);
-//         if (xhr.readyState === 4 && xhr.status === 200) {
-//
-//             // Delete the old table body
-//             let new_tbody = document.createElement("tbody");
-//             document.getElementById("requestsTable").innerHTML = "";
-//
-//             let requests = JSON.parse(xhr.responseText);
-//
-//             console.log(status);
-//
-//             // document.getElementById("eid").value == request.requesterId &&
-//             for (let request of requests) {
-//
-//                 let eId = request.eId;
-//                 let username = request.username;
-//                 let firstName = request.firstName;
-//                 let lastName = request.lastName;
-//                 let role = request.role;
-//
-//                 let row = document.createElement("tr");
-//                 let tdeId = document.createElement("td");
-//                 let tdUsername = document.createElement("td");
-//                 let tdFirstName = document.createElement("td");
-//                 let tdLastName = document.createElement("td");
-//                 let tdRole = document.createElement("td");
-//
-//                 tdeId.textContent = eId;
-//                 tdUsername.textContent = username;
-//                 tdFirstName.textContent = firstName;
-//                 tdLastName.textContent = lastName;
-//                 tdRole.textContent = role;
-//
-//                 row.appendChild(tdeId);
-//                 row.appendChild(tdUsername);
-//                 row.appendChild(tdFirstName);
-//                 row.appendChild(tdLastName);
-//                 row.appendChild(tdRole);
-//
-//                 // Append the row to the tdBody
-//                 document.getElementById("employeeTable").appendChild(row);
-//             }
-//         }
-//
-//     };
-//
-// // Step 3: Call the open() method
-//     xhr.open("GET", "/getAllEmployees.ajax");
-//
-// // Step 4: Call the send() method
-//     xhr.send();
-// }
